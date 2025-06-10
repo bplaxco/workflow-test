@@ -1,5 +1,5 @@
 name: Trying a thing :D
-on: pull_request_target
+on: pull_request
 
 jobs:
   hi:
