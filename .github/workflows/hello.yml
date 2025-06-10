@@ -6,6 +6,12 @@ jobs:
     name: Sup
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          gh issue --repo bplaxco/workflow-test \
+            create --title "Issue title" --body "No issues. Never submit issues!"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Checkout main
         uses: actions/checkout@v2
         with:
