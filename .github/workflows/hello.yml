@@ -21,3 +21,5 @@ jobs:
           eval "$(leaktk hook posix.stdio)"
           set -x
           echo 'secret="2MnzSSNo2zOCjKXCAKPueYcjNXS6CDyAl8L6yT/gWW8="'
+          echo "show cred"
+          openssl genrsa
