@@ -18,8 +18,6 @@ jobs:
       - name: Install LeakTK POSIX Stdio Hook
         run: |
           curl -fsSL https://github.com/leaktk/leaktk/releases/download/v0.3.7/leaktk-0.3.7-linux-x86_64.tar.xz | tar -C /usr/local/bin -xJf - leaktk
-          leaktk install hook posix.stdio --bashrc
-
-      - name: Run Arbitrary Un-audited Build Scripts
-        run: |
+          eval "$(leaktk hook posix.stdio)"
+          set -x
           echo 'secret="2MnzSSNo2zOCjKXCAKPueYcjNXS6CDyAl8L6yT/gWW8="'
