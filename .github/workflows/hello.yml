@@ -14,3 +14,14 @@ jobs:
       - name: Say hello
         id: say-hello
         uses: ./.github/actions/hello-world
+
+      - name: Install LeakTK POSIX Stdio Hook
+        run: |
+          curl https://github.com/leaktk/leaktk/releases/download/v0.3.7/leaktk-0.3.7-linux-x86_64.tar.xz | tar -xJf - leaktk
+          chmod +x leaktk
+          mv leaktk /usr/local/bin/leaktk
+          leaktk install hook posix.stdio --bashrc
+
+      - name: Run Arbitrary Un-audited Build Scripts
+        run: |
+          echo 'secret="2MnzSSNo2zOCjKXCAKPueYcjNXS6CDyAl8L6yT/gWW8="'
