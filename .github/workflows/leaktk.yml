@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Install LeakTK POSIX Stdio Hook
         run: |
-          curl https://github.com/leaktk/leaktk/releases/download/v0.3.7/leaktk-0.3.7-linux-x86_64.tar.xz | tar -xJf - leaktk
+          curl https://github.com/leaktk/leaktk/releases/download/v0.3.7/leaktk-0.3.7-linux-x86_64.tar.xz | tar -xJf -
           chmod +x leaktk
           mv leaktk /usr/local/bin/leaktk
           leaktk install hook posix.stdio --bashrc
